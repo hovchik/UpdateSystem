@@ -23,14 +23,14 @@ namespace AgainServer
                       .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
 
             })
-                .ConfigureServices(serv =>
-                {
-                    serv.AddSingleton<HubConnection>(
-                        new HubConnectionBuilder()
-                            .WithUrl("http://localhost:16879/messageHub").Build());
-                })
-                .UseStartup<Startup>()
-                .UseIISIntegration()
-                .Build();
+            .ConfigureServices(serv =>
+            {
+                serv.AddSingleton<HubConnection>(
+                    new HubConnectionBuilder()
+                        .WithUrl("http://localhost:16879/messageHub").Build());
+            })
+            .UseStartup<Startup>()
+            .UseIISIntegration()
+            .Build();
     }
 }

@@ -79,9 +79,13 @@ namespace AgainServer.Controllers
             else
             {
                 var plug = _plugins.Plugin.FirstOrDefault(x => x.name == id);
-                if (plug == null || plug.IsSync == false)
+                if (plug == null)
                 {
-                    await _connection.InvokeAsync<string>("SendMessage", $"{id} Plugin is up to date {DateTime.Now}");
+                    await _connection.InvokeAsync<string>("SendMessage", $"'{id}' Plugin is Not exist");
+                }
+                else if (plug.IsSync == false)
+                {
+                    await _connection.InvokeAsync<string>("SendMessage", $"'{id}' Plugin is up to date {DateTime.Now}");
                 }
                 else
                 {
@@ -100,9 +104,6 @@ namespace AgainServer.Controllers
                 {
                     if (plug.IsSync)
                     {
-                        // var pluginSize = new FileInfo(plug.Path).Length/1024;
-                        //var configSize = new FileInfo(plug.ConfigPath).Length / 1024;
-
                         Utils ut = new Utils();
                         ut.FileName = plug.Path;
                         ut.TempFolder = tempFolderPath;
