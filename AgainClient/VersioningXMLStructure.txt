@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PluginVersions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Plugin name="Tester1" version="10" />
+  <Plugin name="Tester2" version="6" />
+  <Plugin name="Plugin.as.ts" version="5" />
+  <Plugin name="Plugin.as.mmm" version="9" />
+  <Plugin name="Plugin.appt.surveys" version="11" />
+</PluginVersions>

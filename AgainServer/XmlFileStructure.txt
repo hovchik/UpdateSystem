@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Plugins xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Plugin name="Tester1" version="10">
+    <IsSync>false</IsSync>
+    <Path>C:\Users\hovch\Desktop\DavLong__UpdateProject\AgainServer\bin\Debug\Tester1.zip</Path>
+    <ConfigPath>C:\Users\hovch\Desktop\DavLong__UpdateProject\AgainServer\bin\Debug\Tester1.json</ConfigPath>
+    <Extension>zip</Extension>
+  </Plugin>
+  <Plugin name="Tester2" version="6">
+    <IsSync>false</IsSync>
+    <Path>C:\Users\hovch\Desktop\DavLong__UpdateProject\AgainServer\bin\Debug\Tester2.zip</Path>
+    <ConfigPath>C:\Users\hovch\Desktop\DavLong__UpdateProject\AgainServer\bin\Debug</ConfigPath>
+    <Extension>zip</Extension>
+  </Plugin>
+  <Plugin name="Plugin.as.ts" version="5">
+    <IsSync>false</IsSync>
+    <Path>C:\Users\hovch\Desktop\DavLong__UpdateProject\AgainServer\bin\Debug\Plugin.as.ts.zip</Path>
+    <ConfigPath>C:\Users\hovch\Desktop\DavLong__UpdateProject\AgainServer\bin\Debug</ConfigPath>
+    <Extension>zip</Extension>
+  </Plugin>
+  <Plugin name="Plugin.as.mmm" version="9">
+    <IsSync>false</IsSync>
+    <Path>C:\Users\hovch\Desktop\DavLong__UpdateProject\AgainServer\bin\Debug\Plugin.as.mmm.zip</Path>
+    <ConfigPath>C:\Users\hovch\Desktop\DavLong__UpdateProject\AgainServer\bin\Debug</ConfigPath>
+    <Extension>zip</Extension>
+  </Plugin>
+  <Plugin name="Plugin.appt.surveys" version="11">
+    <IsSync>false</IsSync>
+    <Path>C:\Users\hovch\Desktop\DavLong__UpdateProject\AgainServer\bin\Debug\Plugin.appt.surveys.zip</Path>
+    <ConfigPath>C:\Users\hovch\Desktop\DavLong__UpdateProject\AgainServer\bin\Debug</ConfigPath>
+    <Extension>zip</Extension>
+  </Plugin>
+</Plugins>

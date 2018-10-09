@@ -1,0 +1,3 @@
+working on multiple plugin update.
+
+--crashing on syncronization
