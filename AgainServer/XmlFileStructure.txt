@@ -1,4 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿1. This is a flat file which contains paths and statuses of plugins  in Server Side
+
+<?xml version="1.0" encoding="utf-8"?>
 <Plugins xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Plugin name="Tester1" version="10">
     <IsSync>false</IsSync>
