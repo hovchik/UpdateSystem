@@ -48,14 +48,14 @@ namespace AgainServer.Controllers
             }
         }
 
-        // GET api/values
+
         [HttpGet]
         public string Get()
         {
             return "Starting Work";
         }
 
-        // GET api/values/5
+
         [HttpGet("{id}")]
         public async Task<string> Get(string id)
         {
@@ -145,7 +145,6 @@ namespace AgainServer.Controllers
             }
         }
 
-        // POST api/values
         [HttpPost]
         public async Task Post([FromBody] List<string> value)
         {
@@ -170,7 +169,6 @@ namespace AgainServer.Controllers
             });
         }
 
-        // PUT api/values/5
         [HttpPut]
         public async Task Put([FromBody] string value)
         {
