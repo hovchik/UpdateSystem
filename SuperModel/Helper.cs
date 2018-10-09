@@ -184,7 +184,7 @@ namespace SuperModel
         /// .. Name = original name + ".part_N.X" (N = file part number, X = total files)
         /// </summary>
         /// <returns></returns>
-        public bool SplitFile()
+        public async Task<bool> SplitFile()
         {
             // improvement - make more robust
             bool rslt = false;
@@ -218,7 +218,7 @@ namespace SuperModel
                         int bytesRead = 0;
                         while (bytesRemaining > 0 && (bytesRead = FS.Read(FSBuffer, 0, Math.Min(bytesRemaining, READBUFFER_SIZE))) > 0)
                         {
-                            FilePart.Write(FSBuffer, 0, bytesRead);
+                           await FilePart.WriteAsync(FSBuffer, 0, bytesRead);
                             bytesRemaining -= bytesRead;
                         }
                     }
@@ -228,7 +228,7 @@ namespace SuperModel
             }
             return rslt;
         }
-        public bool MergeFile(string FileName)
+        public async Task<bool> MergeFile(string FileName)
         {
             bool rslt = false;
             // parse out the different tokens from the filename according to the convention
@@ -276,7 +276,7 @@ namespace SuperModel
                             {
                                 using (FileStream fileChunk = new FileStream(chunk.FileName, FileMode.Open))
                                 {
-                                    fileChunk.CopyTo(FS);
+                                   await fileChunk.CopyToAsync(FS);
                                 }
                             }
                             catch (IOException ex)

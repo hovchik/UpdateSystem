@@ -325,7 +325,7 @@ namespace AgainClient
 
 
                 Utils UT = new Utils();
-                var isFileMergedSuccess = UT.MergeFile(PROJECT_ROOT + @"\Temp\" + plName + @"\" + PlugChunk[plName]);
+                var isFileMergedSuccess = UT.MergeFile(PROJECT_ROOT + @"\Temp\" + plName + @"\" + PlugChunk[plName]).GetAwaiter().GetResult();  // async context
 
 
                 if (isFileMergedSuccess)

@@ -55,7 +55,6 @@ namespace AgainServer.Controllers
             return "Starting Work";
         }
 
-
         [HttpGet("{id}")]
         public async Task<string> Get(string id)
         {
@@ -110,7 +109,7 @@ namespace AgainServer.Controllers
                         if (!Directory.Exists(ut.TempFolder))
                             Directory.CreateDirectory(ut.TempFolder);
                         ut.MaxFileSizeKB = MaxFileSizeKB;
-                        ut.SplitFile();
+                        await ut.SplitFile();
                         ConfigModel sendModel = new ConfigModel
                         {
                             PluginName = plug.name,
