@@ -433,18 +433,5 @@ namespace AgainClient
             }, null, startTimeSpan, periodTimeSpan);
             timers.Add(timer);
         }
-
-        public void ScheduleStop(Action task)
-        {
-
-            var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromSeconds(_interval);
-
-            var timer = new System.Threading.Timer((e) =>
-            {
-                task.Invoke();
-            }, null, startTimeSpan, periodTimeSpan);
-            timers.Remove(timer);
-        }
     }
 }
