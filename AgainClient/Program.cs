@@ -48,7 +48,7 @@ namespace AgainClient
             Console.WriteLine("Starting Jobs");
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             connection = new HubConnectionBuilder()
-                .WithUrl("http://localhost:16879/messageHub")
+                .WithUrl(_hubUrl+"/messageHub")
                 .Build();
             connection.On<string>("ReceiveMessage", message =>
             {
@@ -56,7 +56,7 @@ namespace AgainClient
             });
             connection.On<List<string>>("ReceiveList", list => { pluginsList.AddRange(list); });
             //connection.On<ConfigModel,int>("ReceiveConfigs", (cModel,count) =>
-            //{
+            //{ http://hovsignal-001-site1.htempurl.com/
 
 
             //});

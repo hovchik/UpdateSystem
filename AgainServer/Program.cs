@@ -27,7 +27,7 @@ namespace AgainServer
             {
                 serv.AddSingleton<HubConnection>(
                     new HubConnectionBuilder()
-                        .WithUrl("http://localhost:16879/messageHub").Build());
+                        .WithUrl("http://localhost:16879/messageHub").Build()); //https://againserver.azurewebsites.net    http://localhost:16879
             })
             .UseStartup<Startup>()
             .UseIISIntegration()

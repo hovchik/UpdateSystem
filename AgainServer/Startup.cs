@@ -1,4 +1,5 @@
 ﻿using AgainServer.Hubs;
+using AgainServer.Models.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -9,9 +10,11 @@ namespace AgainServer
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public IStaticpaths path { get; set; }
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+            path = new StaticPath { StatPath = env.WebRootPath };
         }
 
         public IConfiguration Configuration { get; }
@@ -26,6 +29,7 @@ namespace AgainServer
                 options.KeepAliveInterval = TimeSpan.MaxValue;
             });
             services.AddSingleton<IConfiguration>(Configuration);
+            services.AddSingleton<IStaticpaths>(path);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,6 +39,7 @@ namespace AgainServer
             {
                 app.UseDeveloperExceptionPage();
             }
+            // path = new StaticPath { StatPath = env.ContentRootPath };
             app.UseSignalR(route =>
             {
                 route.MapHub<MessageHub>("/messageHub");

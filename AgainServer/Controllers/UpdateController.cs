@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AgainServer.Models.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Configuration;
 using SuperModel;
@@ -21,17 +22,18 @@ namespace AgainServer.Controllers
         private readonly HubConnection _connection;
         private Plugins _plugins;
         IConfiguration _config;
+        readonly IStaticpaths _path;
 
-
-        public UpdateController(HubConnection connection, IConfiguration config)
+        public UpdateController(HubConnection connection, IConfiguration config, IStaticpaths path)
         {
             _config = config;
             _connection = connection;
+            _path = path;
             if (_connection.State == HubConnectionState.Disconnected)
             {
                 _connection.StartAsync().GetAwaiter().GetResult();
             }
-            PATH = config["XmlPath"];
+            PATH = _path.StatPath+ @"\Plugins.xml";//config["XmlPath"];
             PluginPathInServer = config["PluginTempPath"];
             MaxFileSizeKB = int.Parse(config["MaxFileSizeKB"]);
             UpdateJurnal();
